@@ -47,16 +47,16 @@ class AccountController extends Controller
         $name = (string)$_POST['name'];
         $studId = (string)$_POST['sid'];
         $paper = (string)$_POST['paper'];
-        $password = (string)$_POST['password'];
+//        $password = (string)$_POST['password'];
         $account->setName($name);
         $account->setStudId($studId);
         $account->setPaper($paper);
-        $account->setPassword($password);
+//        $account->setPassword($password);
 
         $account->save();
         $username = $account->getStudId();
         $view = new View('accountCreated');
-        echo $view->addData('username', $studId)
+        echo $view->addData('studId', $studId)
             ->addData(
                 'linkTo', function ($route,$params=[]) {
                 return $this->linkTo($route, $params);
@@ -65,4 +65,14 @@ class AccountController extends Controller
             ->render();
     }
 
+//    public function readAction(){
+//        $view = new View('powerpoint');
+//        echo $view
+//            ->addData(
+//                'linkTo', function ($route,$params=[]) {
+//                return $this->linkTo($route, $params);
+//            }
+//            )
+//            ->render();
+//    }
 }

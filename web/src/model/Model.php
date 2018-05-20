@@ -62,7 +62,6 @@ class Model
                                           `name` varchar(256) DEFAULT NULL,
                                           `studentId` varchar(256) DEFAULT NULL,
                                           `paper` varchar(256) DEFAULT NULL,
-                                          `password` VARCHAR (20) NOT NULL,
                                           PRIMARY KEY (`id`) );"
             );
 
@@ -72,7 +71,7 @@ class Model
             }
 
             if (!$this->db->query(
-                "INSERT INTO `account` VALUES (NULL,'Bob', '111','123.123','1234567A'), (NULL,'Mary', '112','123.111','1234567A');"
+                "INSERT INTO `account` VALUES (NULL,'Bob', '111','123.123'), (NULL,'Mary', '112','123.111');"
             )) {
                 // handle appropriately
                 error_log("Failed creating sample data!", 0);

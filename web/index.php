@@ -37,6 +37,7 @@ $collection->attachRoute(
         )
     )
 );
+
 $collection->attachRoute(
     new Route(
         '/account/create', array(
@@ -46,6 +47,17 @@ $collection->attachRoute(
         )
     )
 );
+
+//$collection->attachRoute(
+//    new Route(
+//        '/account/readpowerpoint/', array(
+//            '_controller' => 'studentform\controller\AccountController::readAction',
+//            'methods' => 'GET',
+//            'name' => 'Powerpoint'
+//        )
+//    )
+//);
+
 $router = new Router($collection);
 $router->setBasePath('/');
 

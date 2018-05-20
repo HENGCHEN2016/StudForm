@@ -32,7 +32,7 @@ class AccountModel extends Model
     /**
      * @var string Account password
      */
-    private $_password;
+//    private $_password;
     /**
      * @var string Account repeat password
      */
@@ -80,22 +80,22 @@ class AccountModel extends Model
     /**
      * @return string Account ID
      */
-    public function getPassword()
-    {
-        return $this->_password;
-    }
+//    public function getPassword()
+//    {
+//        return $this->_password;
+//    }
 
     /**
      * @param string $_password Account password
      *
      * @return $this AccountModel
      */
-    public function setPassword( $_password)
-    {
-        $this->_password = $_password;
-
-        return $this;
-    }
+//    public function setPassword( $_password)
+//    {
+//        $this->_password = $_password;
+//
+//        return $this;
+//    }
 
     /**
      * @param string $_id Account id
@@ -169,9 +169,9 @@ class AccountModel extends Model
      * @param string $pw Account password
      * @return string hint reminder
      */
-    public function checkPassword(string $pw){
-        return $pw == $this->_password?"Login successfully!":"Login failed!";
-    }
+//    public function checkPassword(string $pw){
+//        return $pw == $this->_password?"Login successfully!":"Login failed!";
+//    }
     /**
      * Check whether the user name have been occupied or not
      * @param string $user Account user name
@@ -198,15 +198,15 @@ class AccountModel extends Model
         $name = $this->_name??"NULL";
         $studentId = $this->_studId??"NULL";
         $paper = $this->_paper??"NULL";
-        $password = $this->_password?? "NULL";
+//        $password = $this->_password?? "NULL";
         if (!isset($this->_id)) {
             // New account - Perform INSERT
-            if (!$result = $this->db->query("INSERT INTO `account` VALUES (NULL,'$name','$studentId','$paper','$password');")) {
+            if (!$result = $this->db->query("INSERT INTO `account` VALUES (NULL,'$name','$studentId','$paper');")) {
             }
             $this->_id = $this->db->insert_id;
         } else {
             // saving existing account - perform UPDATE
-            if (!$result = $this->db->query("UPDATE `account` SET `name` = '$name', `studentId` = '$studentId', `paper` = '$paper', `password` = '$password' WHERE `id` = $this->_id;")) {
+            if (!$result = $this->db->query("UPDATE `account` SET `name` = '$name', `studentId` = '$studentId', `paper` = '$paper'  WHERE `id` = $this->_id;")) {
                 $this->_id = $this->db->client_info;
             }
         }
