@@ -1,0 +1,56 @@
+<?php include "header.phtml" ?>
+
+    <form method="POST" action="/account/create">
+        <table>
+            <!--            <tr><td>Student ID</td><td><input type = "text" name=""/></td></tr>-->
+            <tr><td>Student Name</td><td><input type = "text" name="name"/></td></tr>
+            <tr><td>Student ID</td><td><input type = "text" name="sid"/></td></tr>
+            <tr><td>Paper</td><td><input type = "text" name="paper"/></td></tr>
+            <tr><td>Password</td><td><input type="password" name = "password"/></td></tr>
+            <tr><td><a href=<?= $linkTo('accountIndex'); ?>>Back</a></td></tr>
+            <tr><td><input type="submit" value="submit"></td></tr>
+
+        </table>
+    </form>
+
+<!--    <script>-->
+<!--    function checkform(event) {-->
+<!--        var sid = $("studentID");-->
+<!--        var name =$("sName");-->
+<!--        var paper = $("sPaper");-->
+<!--        if (sid.value === ""){-->
+<!--            alert("Plz enter a student ID");-->
+<!--            return false;-->
+<!--        }-->
+<!--        if(name.value === ""){-->
+<!--            alert("Plz enter a name");-->
+<!--            return false;-->
+<!--        }-->
+<!--        if(paper.value === ""){-->
+<!--            alert("Plz enter a paper");-->
+<!--            return false;-->
+<!--        }-->
+<!--        if((sid.value.length<8)||(id.value.length>8){-->
+<!--             alert("Student ID length must be exact 8");-->
+<!--             return false;-->
+<!--        }-->
+<!--        if((paper.value.length<6 )|| (paper.value.length>6)){-->
+<!--            alert("Paper length must be exact 6");-->
+<!--            return false;-->
+<!--        }-->
+<!--        if(name.value.search(/[~`!#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?@]{32}/) > 0){-->
+<!--            alert("Name must only contain alphanumeic characters ");-->
+<!--        }-->
+<!--        if(sid.value.search(/[^\d]{8}/)){-->
+<!--            alert("Student ID length must be exact 8 and all digits");-->
+<!--            return false;-->
+<!--        }-->
+<!--        if(paper.value.search(/^[0-9]{1,3}([.][0-9]{1,4})/)){-->
+<!--            alert("Paper length must be exact 7 and up to 3 before the decimal point and up to 3 after the decimal point");-->
+<!--            return false;-->
+<!--        }-->
+<!--    }-->
+<!---->
+<!--    </script>-->
+
+<?php include "footer.phtml" ?>
